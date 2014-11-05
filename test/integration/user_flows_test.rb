@@ -12,7 +12,7 @@ class UserFlowsTest < ActionDispatch::IntegrationTest
 
     get '/list'
     assert_response :success
-    assert assigns(:milages)
+    assert assigns(:mileages)
 
     entry = Mileage.last
     get_via_redirect '/delete', id: entry.id
