@@ -13,7 +13,7 @@ class MileagesControllerTest < ActionController::TestCase
   test 'should get list' do
     get :list
     assert_response :success
-    assert_not_nil assigns(:milages)
+    assert_not_nil assigns(:mileages)
   end
 
   test 'should create mileage' do
