@@ -43,8 +43,6 @@ gem 'chart-js-rails'
 gem 'pry-rails'
 gem 'date_validator'
 
-group :development, :test do
-  gem 'factory_girl_rails'
-  gem 'capybara'
-  gem 'poltergeist'
+group :test do
+  gem 'rake'
 end
