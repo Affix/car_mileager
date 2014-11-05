@@ -1,0 +1,11 @@
+STARTING_MILEAGE:
+    name: STARTING_MILEAGE
+    value: 0
+
+YEARLY_MILEAGE:
+    name: YEARLY_MILEAGE
+    value: 12_000
+
+STARTING_MONTH:
+    name: STARTING_MONTH
+    value: October

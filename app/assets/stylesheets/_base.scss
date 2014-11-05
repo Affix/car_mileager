@@ -1,0 +1,55 @@
+@import url(http://fonts.googleapis.com/css?family=Raleway:400,500,700);
+
+*, *:after, *:before { -webkit-box-sizing: border-box; box-sizing: border-box; }
+.clearfix:before, .clearfix:after { content: ''; display: table; }
+.clearfix:after { clear: both; }
+
+body {
+  background: $background-color;
+  color: #74777b;
+  font-weight: 400;
+  font-size: 1em;
+  font-family: $font-primary;
+  margin: 0;
+}
+
+a {
+  color: #2CC185;
+  text-decoration: none;
+  outline: none;
+}
+
+a:hover, a:focus {
+  color: #74777b;
+}
+
+p {
+  text-align: center;
+  padding: 1em;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+  table thead tr {
+    font-weight: bold;
+    border-bottom: 1px solid #666
+  }
+  table td {
+    padding: 5px;
+  }
+  table tbody tr {
+    border-bottom: 1px solid #F2F2F2
+  }
+    table tbody tr:hover {
+      background: #F2F2F2
+    }
+
+.hidden {
+  display: none;
+}
+
+.text-right {
+  text-align: right;
+}

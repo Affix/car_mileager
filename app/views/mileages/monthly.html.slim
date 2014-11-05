@@ -1,0 +1,25 @@
+div.monthly-container
+  - percentage = (@actual[@current_months_position].to_f / @expected[@current_months_position].to_f * 100.0).round(0)
+  div class="item large-item #{percentage < 100 ? 'progress-' + percentage.to_s : 'percentage__red'}"
+      div.radial-inner-bg.large-radial-inner-bg #{percentage}%
+
+  div.clearfix
+
+  strong Current Month - #{Time.now.strftime('%B')}
+
+div.monthly-container
+
+  hr
+  
+  h3 Previous Months
+
+  - @actual.each_with_index do |a, i|
+
+    - percentage = (a.to_f / @expected[i].to_f * 100.0).round(0)
+
+    div.clearfix
+
+    div class="item #{percentage < 100 ? 'progress-' + percentage.to_s : 'percentage__red'}"
+        div.radial-inner-bg  #{percentage}%
+    div.monthly-container__label 
+      = @labels[i]

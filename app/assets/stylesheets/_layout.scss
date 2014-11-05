@@ -1,0 +1,56 @@
+.container {
+  max-width: $container-max-width;
+  margin: 0 auto;
+}
+
+.heading {
+  background: rgba(40,44,42,0.05);
+  border-bottom: solid 1px rgba(40, 44, 42, 0.0980392);
+}
+
+.sliding-panel {
+
+	width: 100%;
+	background: rgba(40,44,42,0.05);
+	border-bottom: solid 1px rgba(40, 44, 42, 0.0980392);
+
+	&__inner {
+
+		max-width: 1200px;
+		padding: 10px;
+		margin: 0 auto;
+
+		label {
+			display: block;
+			padding: 10px 0;
+		}
+
+		input {
+			width: 300px;
+			height: 40px;
+			font-size: 1.2em;
+			border: solid 1px rgba(40, 44, 42, 0.0980392);
+		}
+			
+		input[type='submit'] {
+			height: 40px;
+			font-size: 12px;
+			display: block;
+			margin-top: 15px;
+		}
+		
+	}
+}
+
+.monthly-container {
+
+  margin: 30px auto;
+  width: 300px;
+  text-align: center;
+
+	&__label {
+	    vertical-align: middle;
+	    float: right;
+	    margin-top: 40px;
+	}
+}

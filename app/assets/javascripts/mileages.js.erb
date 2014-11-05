@@ -1,0 +1,60 @@
+function resetMenu() {
+  $('.sliding-panel').hide();
+  $('#record-toggle').removeClass('tab-current');
+  $('#settings-toggle').removeClass('tab-current');
+}
+
+var ready = function() {
+
+  if($('#canvas').length){
+
+    $.getJSON( "/populate_graph.json", function( returned_data ) {
+
+      data = {
+        labels : returned_data[0].labels,
+        datasets : [
+          {
+            label: "Estimated",
+            fillColor : "rgba(220,220,220,0.5)",
+            strokeColor : "rgba(220,220,220,1)",
+            pointColor : "rgba(220,220,220,1)",
+            pointStrokeColor : "#fff",
+            data: returned_data[0].expected
+          },
+          {
+            label: "Actual",
+            fillColor: "rgba(151,187,205,0.5)",
+            strokeColor: "rgba(151,187,205,0.8)",
+            highlightFill: "rgba(151,187,205,0.75)",
+            highlightStroke: "rgba(151,187,205,1)",
+            data: returned_data[0].actual
+          }
+        ]
+      }
+
+      Chart.defaults.global.responsive = true;
+      myNewChart = new Chart($("#canvas").get(0).getContext("2d")).Line(data)
+    });
+
+  }
+
+  $('#record-link').click(function(){
+    if(! $('.record-container').is(":visible") ){
+      resetMenu();
+    }
+    $('.record-container').slideToggle();
+    $('#record-toggle').toggleClass('tab-current');
+  });
+
+  $('#settings-link').click(function(){
+    if(! $('.settings-container').is(":visible") ){
+      resetMenu();
+    }
+    $('.settings-container').slideToggle();
+    $('#settings-toggle').toggleClass('tab-current');
+  });
+
+};
+
+$(document).ready(ready);
+$(document).on('page:load', ready);

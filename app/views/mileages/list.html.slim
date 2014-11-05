@@ -1,0 +1,17 @@
+h1 Car Mileage - Records
+
+table
+  thead
+    tr
+      td Date
+      td Amount
+      td
+  tbody
+  - for miles in @mileages do
+    tr
+      td
+        = miles.date
+      td
+        = miles.amount
+      td.text-right
+        = link_to 'Delete', controller: :mileages, action: :delete, id: miles.id
