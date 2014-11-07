@@ -10,15 +10,20 @@ class MileagesController < ApplicationController
   end
 
   def delete
-    Mileage.find(params[:id]).destroy
-
-    redirect_to controller: 'mileages', action: 'list'
+    if Mileage.exists?(params[:id]) && Mileage.destroy(params[:id])
+      redirect_to list_path, notice: 'Mileage was successfully deleted.'
+    else
+      redirect_to list_path, alert: 'Unable to delete as no mileage was specified.'
+    end
   end
 
   def create
-    Mileage.create(date: params[:mileage][:date], amount: params[:mileage][:amount])
-
-    redirect_to controller: 'mileages', action: 'index'
+    mileage = Mileage.create(date: params[:mileage][:date], amount: params[:mileage][:amount])
+    if mileage.valid?
+      redirect_to root_path, notice: 'Mileage was successfully created.'
+    else
+      redirect_to root_path, alert: 'Mileage was not successfully created, a valid date and an amount is required.'
+    end
   end
 
   def monthly

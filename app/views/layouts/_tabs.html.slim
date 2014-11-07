@@ -41,7 +41,7 @@ div.sliding-panel.settings-container.hidden
     = form_tag("/settings/update", method: "post", class: 'sliding-panel-form') do
 
       label for="STARTING_MONTH" Month Start
-      = date_field(:settings, :STARTING_MONTH, value: @STARTING_MONTH)
+      = text_field(:settings, :STARTING_MONTH, value: @STARTING_MONTH)
       label for="STARTING_MILEAGE" Starting Mileage
       = text_field(:settings, :STARTING_MILEAGE, value: @STARTING_MILEAGE)
       label for="YEARLY_MILEAGE" Yearly Allowance
