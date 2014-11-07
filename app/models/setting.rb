@@ -6,21 +6,18 @@ class Setting < ActiveRecord::Base
   validates :value, presence: true
   validate :is_value_a_valid_month?
 
+  # Create custom update method rather than using update_all as it doesn't validate data
+  # this allows us to update if exists, or create if it doesn't.
   def self.update_setting(name, value)
     setting = Setting.where(name: name).limit(1).first
-    if setting.present?
-      setting.value = value
-      setting.save
-    else
-      Setting.create(name: name, value: value)
-    end
+    setting.present? ? setting.update(value: value) : Setting.create(name: name, value: value)
   end
 
   private
 
   def is_value_a_valid_month?
     if name == 'STARTING_MONTH' && value.present? && !Date::MONTHNAMES.slice(1,12).inspect.include?(value) then
-        errors.add(:value, "must be a month")   
+        errors.add(:value, 'must be a month')   
     end
   end
 
