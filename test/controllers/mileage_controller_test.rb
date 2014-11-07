@@ -26,6 +26,20 @@ class MileagesControllerTest < ActionController::TestCase
     assert_equal 'Mileage was successfully created.', flash[:notice]
   end
 
+  test 'should display validation error when creating mileage without amount' do
+    post :create, mileage: { date: '10-10-2014' }
+
+    assert_redirected_to root_path
+    assert_equal 'Mileage was not successfully created, a valid date and an amount is required.', flash[:alert]
+  end
+
+  test 'should display validation error when creating milage without date' do
+    post :create, mileage: { amount: '1222' }
+
+    assert_redirected_to root_path
+    assert_equal 'Mileage was not successfully created, a valid date and an amount is required.', flash[:alert]
+  end
+
   test 'should delete mileage' do
 
     entry = Mileage.first
@@ -36,6 +50,14 @@ class MileagesControllerTest < ActionController::TestCase
 
     assert_redirected_to list_path
     assert_equal 'Mileage was successfully deleted.', flash[:notice]
+  end
+
+  test 'should display validation error when attempting to delete mileage without an id' do
+
+    get :delete
+
+    assert_redirected_to list_path
+    assert_equal 'Unable to delete as no mileage was specified.', flash[:alert]
   end
 
 end

@@ -18,4 +18,8 @@ html
       - if flash[:notice]
         .alert.alert__notice #{flash[:notice]}
 
+      - if flash[:alert]
+        .alert.alert__alert #{flash[:alert]}
+
+
       == yield
