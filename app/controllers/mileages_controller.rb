@@ -12,13 +12,13 @@ class MileagesController < ApplicationController
   def delete
     Mileage.find(params[:id]).destroy
 
-    redirect_to controller: 'mileages', action: 'list'
+    redirect_to list_path, notice: "Mileage was successfully deleted."
   end
 
   def create
     Mileage.create(date: params[:mileage][:date], amount: params[:mileage][:amount])
 
-    redirect_to controller: 'mileages', action: 'index'
+    redirect_to root_path, notice: "Mileage was successfully created."
   end
 
   def monthly

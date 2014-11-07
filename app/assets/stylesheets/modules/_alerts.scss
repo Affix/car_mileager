@@ -1,0 +1,11 @@
+.alert{
+  
+  margin: 10px auto;
+  padding: 20px;
+  color: #fff;
+
+  &__notice {
+    background: #2CC185;
+    border: solid 1px #4cae4c;
+  }
+}

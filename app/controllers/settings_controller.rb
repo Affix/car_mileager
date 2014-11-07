@@ -5,7 +5,7 @@ class SettingsController < ApplicationController
       Setting.where(name: n).update_all(value: v)
     end
 
-    redirect_to controller: 'mileages', action: 'index'
+    redirect_to root_path, notice: "Settings where successfully updated."
   end
 
 end

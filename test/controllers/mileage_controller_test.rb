@@ -23,6 +23,7 @@ class MileagesControllerTest < ActionController::TestCase
     end
 
     assert_redirected_to root_path
+    assert_equal 'Mileage was successfully created.', flash[:notice]
   end
 
   test 'should delete mileage' do
@@ -34,6 +35,7 @@ class MileagesControllerTest < ActionController::TestCase
     end
 
     assert_redirected_to list_path
+    assert_equal 'Mileage was successfully deleted.', flash[:notice]
   end
 
 end
