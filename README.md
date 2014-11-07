@@ -1,6 +1,6 @@
 # Car Mileager
 
-{<img src="https://magnum.travis-ci.com/allistera/car_mileager.svg?token=CmfQjsyuuNAt1uufUxEC&branch=master" alt="Build Status" />}[https://magnum.travis-ci.com/allistera/car_mileager]
+<img src="https://magnum.travis-ci.com/allistera/car_mileager.svg?token=CmfQjsyuuNAt1uufUxEC&branch=master" alt="Build Status" />
 
 With more and more cars getting sold with mileage restrictions these days it can be hard to keep track your usage, and by going over this limit you can incur hefty fines. Car Mileager, an open source project aims to solve this issue, allowing users to easily visualise exactly how much mileage they have used, and have remaining. 
  
