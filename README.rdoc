@@ -1,1 +1,0 @@
-{<img src="https://magnum.travis-ci.com/allistera/car_mileager.svg?token=CmfQjsyuuNAt1uufUxEC&branch=master" alt="Build Status" />}[https://magnum.travis-ci.com/allistera/car_mileager]
