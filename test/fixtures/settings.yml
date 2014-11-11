@@ -1,11 +1,14 @@
 STARTING_MILEAGE:
     name: STARTING_MILEAGE
     value: 0
+    user_id: 1
 
 YEARLY_MILEAGE:
     name: YEARLY_MILEAGE
     value: 12_000
+    user_id: 1
 
 STARTING_MONTH:
     name: STARTING_MONTH
     value: October
+    user_id: 1

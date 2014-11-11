@@ -3,14 +3,16 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-  before_action :populate_settings
+  before_action :authenticate_user!
+  before_action :populate_settings, if: :signed_in?
+
 
   def populate_settings
     @STARTING_MONTH = 'January'
     @YEARLY_MILEAGE = 10_000
     @STARTING_MILEAGE = 0
 
-    settings = Setting.all
+    settings = Setting.where(user_id: current_user.id)
 
     settings.each do |setting|
       unless setting.name.empty?

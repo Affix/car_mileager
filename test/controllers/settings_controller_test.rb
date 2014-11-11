@@ -1,5 +1,11 @@
 class SettingsControllerTest < ActionController::TestCase
 
+  include Devise::TestHelpers
+
+  def setup
+    sign_in User.first
+  end
+
   test 'should update settings' do
     post :update, settings: { STARTING_MILEAGE: 100 }
     assert_redirected_to root_path

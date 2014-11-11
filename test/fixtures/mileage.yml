@@ -1,12 +1,16 @@
 FirstEntry:
     date: 01-10-2014
     amount: 500
+    user_id: 1
 SecondEntry:
     date: 01-11-2014
     amount: 800
+    user_id: 1
 ThirdEntry:
     date: 01-12-2014
     amount: 1200
+    user_id: 1
 ThirdEntry:
     date: 08-12-2014
     amount: 1400
+    user_id: 1

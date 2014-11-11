@@ -22,8 +22,8 @@ class MileageCalculator
     out
   end
 
-  def self.actual(starting_month)
-    mileages = Mileage.all.group_by { |m| m.date.end_of_month }
+  def self.actual(user_id, starting_month)
+    mileages = Mileage.where(user_id: user_id).group_by { |m| m.date.end_of_month }
     total = Array.new(13, 0)
 
     mileages.each do |date, weeks|

@@ -15,7 +15,7 @@ class MileageCalculatorTest < ActionController::TestCase
   end
 
   test 'should calculate actual mileage' do
-    actual = MileageCalculator.actual 'September'
+    actual = MileageCalculator.actual(1, 'September')
     expected_results = [0, 500.0, 800.0, 1400.0, 0, 0, 0, 0, 0, 0, 0, 0]
     assert_equal(actual, expected_results)
   end
