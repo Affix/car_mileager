@@ -8,3 +8,4 @@ deploy:
   app: frozen-ravine-7926
   on:
     repo: allistera/car_mileager
+  run: "rake db:migrate"
