@@ -1,3 +1,10 @@
 language: ruby
 rvm:
-  - 2.1.1
+- 2.1.1
+deploy:
+  provider: heroku
+  api_key:
+    secure: bDwcq6UcEdPx241gey4pEyuL2002gXXuoaPU+9QGOv63OIK4VzJ353wffWexj+eoF9puxfWu9is8t1uXCQXi37ZRrO5xrxI5UZGb/c2L63HSramsSGVAXJq7HglYwsz+sl60b4KYHEFg+P8RmtCnXtU+CzmZEG1hfkqUNycHw8o=
+  app: frozen-ravine-7926
+  on:
+    repo: allistera/car_mileager
