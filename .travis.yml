@@ -9,3 +9,4 @@ deploy:
   on:
     repo: allistera/car_mileager
   run: "rake db:migrate"
+  strategy: git
