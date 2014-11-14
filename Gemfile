@@ -38,8 +38,8 @@ gem 'spring',        group: :development
 
 gem 'slim'
 gem 'chart-js-rails'
-gem 'pry-rails'
 gem 'date_validator'
+gem 'devise'
 
 group :development, :test do
   gem 'sqlite3'

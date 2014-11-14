@@ -1,5 +1,11 @@
 class MileagesControllerTest < ActionController::TestCase
 
+  include Devise::TestHelpers
+  
+  def setup
+    sign_in User.first
+  end
+
   test 'should get index' do
     get :index
     assert_response :success

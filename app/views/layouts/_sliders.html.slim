@@ -1,0 +1,30 @@
+div.sliding-panel.record-container.hidden
+  div.sliding-panel__inner
+
+    h2 Record
+
+    = form_tag("/create", method: "post", class: 'sliding-panel-form') do
+
+      label for="date" Date
+      = date_field(:mileage, :date, value: Time.now.strftime('%d-%m-%Y') )
+      
+      label for="date" Mileage
+      = text_field(:mileage, :amount)
+
+      = submit_tag "Submit"
+
+div.sliding-panel.settings-container.hidden
+  div.sliding-panel__inner
+  
+    h2 Settings
+
+    = form_tag("/settings/update", method: "post", class: 'sliding-panel-form') do
+
+      label for="STARTING_MONTH" Month Start
+      = text_field(:settings, :STARTING_MONTH, value: @STARTING_MONTH)
+      label for="STARTING_MILEAGE" Starting Mileage
+      = text_field(:settings, :STARTING_MILEAGE, value: @STARTING_MILEAGE)
+      label for="YEARLY_MILEAGE" Yearly Allowance
+      = text_field(:settings, :YEARLY_MILEAGE, value: @YEARLY_MILEAGE)
+
+      = submit_tag "Update"

@@ -4,8 +4,8 @@ class UserFlowsTest < ActionDispatch::IntegrationTest
 
   test 'create then delete a record' do
 
-    get '/'
-    assert_response :success
+    post_via_redirect '/users/sign_in', user: { email: 'testuser1@user.com', password: 'password1' }
+    assert_equal root_path, path
 
     post_via_redirect '/create', mileage: { date: '5-10-2014', amount: 600 }
     assert_equal root_path, path
@@ -23,12 +23,11 @@ class UserFlowsTest < ActionDispatch::IntegrationTest
 
   test 'update settings' do
 
-    get '/'
-    assert_response :success
+    post_via_redirect '/users/sign_in', user: { email: 'testuser2@user.com', password: 'password2' }
+    assert_equal root_path, path
 
     post_via_redirect '/settings/update', settings: { YEARLY_MILEAGE: 10_000 }
     assert_equal root_path, path
-
 
   end
 
