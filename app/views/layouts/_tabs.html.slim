@@ -17,8 +17,9 @@ section class="heading"
         li#settings-toggle
           a.icon.icon-config#settings-link href="javascript:"
             span Settings
-        li
-          a.icon.icon-logout#settings-link href="/users/sign_out"
-            span Logout
+        - if user_signed_in?
+          li
+            a.icon.icon-logout#settings-link href="/users/sign_out"
+              span Logout
 
 == render "layouts/sliders" if user_signed_in?
