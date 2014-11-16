@@ -1,7 +1,9 @@
-function resetMenu() {
-  $('.sliding-panel').hide();
-  $('#record-toggle').removeClass('tab-current');
-  $('#settings-toggle').removeClass('tab-current');
+function resetMenu(container) {
+  if(! $(container).is(":visible") ){
+    $('.sliding-panel').hide();
+    $('#record-toggle').removeClass('tab-current');
+    $('#settings-toggle').removeClass('tab-current');
+  }
 }
 
 var ready = function() {
@@ -39,19 +41,19 @@ var ready = function() {
   }
 
   $('#record-link').click(function(){
-    if(! $('.record-container').is(":visible") ){
-      resetMenu();
+    if( $('.record-container').length ){
+      resetMenu('.record-container');
+      $('.record-container').slideToggle();
+      $('#record-toggle').toggleClass('tab-current');
     }
-    $('.record-container').slideToggle();
-    $('#record-toggle').toggleClass('tab-current');
   });
 
   $('#settings-link').click(function(){
-    if(! $('.settings-container').is(":visible") ){
-      resetMenu();
+    if( $('.record-container').length ){
+      resetMenu('.settings-container');
+      $('.settings-container').slideToggle();
+      $('#settings-toggle').toggleClass('tab-current');
     }
-    $('.settings-container').slideToggle();
-    $('#settings-toggle').toggleClass('tab-current');
   });
 
 };
