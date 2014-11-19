@@ -26,4 +26,11 @@ class MileageTest < ActiveSupport::TestCase
     assert_not mileage.save
   end
 
+  test 'should not save mileage with negative value' do
+    mileage = Mileage.new
+    mileage.date = '01-01-1970'
+    mileage.amount = -19
+    assert_not mileage.save
+  end
+
 end
